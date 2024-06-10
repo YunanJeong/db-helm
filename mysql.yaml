@@ -1,0 +1,30 @@
+
+
+primary:
+  # 외부노출
+  service:
+    type: LoadBalancer
+    ports:
+      mysql: 3306
+      mysqlx: 33060
+  
+  # 테스트용으로 간단히 띄우려는 데 Probe 설정때문에 자꾸 뻑난다. 다 꺼주자.
+  livenessProbe:
+    enabled: false
+  readinessProbe:
+    enabled: false
+  startupProbe:
+    enabled: false
+
+  # PV는 default로 활성화되어있음
+  persistence:
+    enabled: true
+    existingClaim: ""
+    subPath: ""
+    storageClass: ""
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+# primary, secondary 설정이 있음. secondary db는 그냥 꺼주자
+secondary:
+  replicaCount: 0
