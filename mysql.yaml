@@ -1,7 +1,23 @@
 
 # 계정 등 보안설정
-# auth:
+auth:
+  rootPassword: ""
+  createDatabase: true
+  database: "mydb"
 
+  username: "myuser"
+  password: "mypass"
+
+  replicationUser: replicator
+  replicationPassword: ""
+  existingSecret: ""
+
+  usePasswordFiles: false
+  customPasswordFiles: {}
+  authenticationPolicy: ""
+
+## @section MySQL Primary parameters
+##
 # init, start Scripts
 ## @param initdbScripts Dictionary of initdb scripts
 ## Specify dictionary of scripts to be run at first boot
