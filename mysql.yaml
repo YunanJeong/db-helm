@@ -1,7 +1,7 @@
 
 # 계정 등 보안설정
 auth:
-  rootPassword: ""
+  rootPassword: "mypass"
   createDatabase: true
   database: "mydb"
 
