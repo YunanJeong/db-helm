@@ -62,9 +62,9 @@ primary:
   startupProbe:
     enabled: false
 
-  # PV는 default로 활성화되어있음
+  # PV는 default로 활성화되어있음. 테스트시 자주 DB설정을 바꾸거나 껐다켰다 해야하므로 일단 false
   persistence:
-    enabled: true
+    enabled: false
     existingClaim: ""
     subPath: ""
     storageClass: ""
