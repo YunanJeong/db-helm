@@ -95,13 +95,13 @@ primary:
 
     [client]
     port={{ .Values.primary.containerPorts.mysql }}
-    # socket=/opt/bitnami/mysql/tmp/mysql.sock
+    socket=/opt/bitnami/mysql/tmp/mysql.sock
     default-character-set=UTF8
     plugin_dir=/opt/bitnami/mysql/lib/plugin
 
     [manager]
     port={{ .Values.primary.containerPorts.mysql }}
-    # socket=/opt/bitnami/mysql/tmp/mysql.sock
+    socket=/opt/bitnami/mysql/tmp/mysql.sock
     pid-file=/opt/bitnami/mysql/tmp/mysqld.pid
 
 # primary, secondary 설정이 있음. secondary db는 그냥 꺼주자
