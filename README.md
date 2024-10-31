@@ -36,10 +36,14 @@ mysql>
 
 ## 늦게켜지는 이슈
 
-- Probe 기능을 전부 꺼도, 내부적으로 Upgrade 과정때문에 초기화가 늦다.
-- 특히 WSL에서 그런 현상이 발생하며, 3~4분 소요 후 완료되면 접속가능해짐
+- WSL에서 DB 초기화 과정이 오래 걸린다.
+  - Probe 기능을 전부 꺼도, 접속가능해지기 까지 오래 걸림
+  - 특히 아래 Upgrade 과정때문에 늦다.
+  - 3~4분 소요 후 완료되면 접속가능
+- EC2 환경 등 좀 더 plain한 환경에선 괜찮았음
 
 ```sh
+# MySQL 로그
 mysql 2024-10-31T02:25:46.950581Z 4 [System] [MY-013381] [Server] Server upgrade from '80400' to '80400' started.                                         
 mysql 2024-10-31T02:28:00.623049Z 4 [System] [MY-013381] [Server] Server upgrade from '80400' to '80400' completed.
 ```
